@@ -1,11 +1,10 @@
-import Navbar from "@/components/Navbar";
 
 
-export default function Page() {
+export default function Home() {
   return (
-    <main>
-      <Navbar/>
-      <p>helo</p>
-    </main>
+    <section>
+      <p>ini home</p>
+      
+    </section>
   );
 }
