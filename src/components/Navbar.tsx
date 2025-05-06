@@ -22,7 +22,7 @@ function Navbar() {
       <div className="flex justify-between items-center w-full lg:mx-[10vh] bg-slate-900 p-4  top-0 shadow-md">
         <div className="flex gap-2 items-center ">
           <Image src={"/logo.webp"} alt="logo" width={50} height={50} />
-          <p className=" text-white">NUSANTARA BITES</p>
+          <p className=" text-white">MEREK</p>
         </div>
         <div className="hidden lg:flex items-center justify-between">
           <div className="flex gap-7 text-md font-semibold text-white items-center">

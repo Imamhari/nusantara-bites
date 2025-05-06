@@ -3,7 +3,7 @@
 export default function Home() {
   return (
     <section>
-      <p>ini home</p>
+      <h1 className="text-red-600  text-3xl font-bold">ini home</h1>
       
     </section>
   );
