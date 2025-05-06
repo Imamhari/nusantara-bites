@@ -18,8 +18,8 @@ function Navbar() {
   };
 
   return (
-    <section className="bg-slate-900 p-4 flex justify-between items-center sticky top-0 z-50">
-      <div className="flex justify-between items-center w-full lg:mx-[10vh]">
+    <section className="flex justify-between items-center sticky bg-slate-900">
+      <div className="flex justify-between items-center w-full lg:mx-[10vh] bg-slate-900 p-4  top-0 z-70 shadow-md">
         <div className="flex gap-2 items-center ">
           <Image src={"/logo.webp"} alt="logo" width={50} height={50} />
           <p className=" text-white">NUSANTARA BITES</p>
@@ -84,69 +84,62 @@ function Navbar() {
       </div>
 
       {/* Hamburger Menu for Mobile */}
+      {/* Tombol Hamburger */}
       <div className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full text-white cursor-pointer">
         <button
-          onClick={() => setShowMobileMenu(true)}
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
           className="text-white text-2xl focus:outline-none"
         >
-          <CgMenuRight />
+          {showMobileMenu ? <FaWindowClose /> : <CgMenuRight />}
         </button>
       </div>
-      {/* Menu Mobile */}
+
+      {/* Menu Mobile Drop-down dari atas */}
       <div
-        className={`fixed top-0 right-0  h-screen max-w-sm bg-slate-900 text-white z-40 transform transition-transform duration-300 ease-in-out ${
-          showMobileMenu ? "translate-x-0" : "translate-x-full"
+        className={`fixed lg:hidden top-[70px] left-0 w-full bg-slate-900 -z-40 text-white transform transition-transform duration-300 ease-in-out ${
+          showMobileMenu ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        {/* Tombol Close */}
-        <div className="flex justify-end p-4">
-          <button
-            onClick={() => setShowMobileMenu(false)}
-            className="text-3xl text-red-700 focus:outline-none"
-          >
-            <FaWindowClose />
-          </button>
-        </div>
+        <div className="flex justify-between">
+          <div className="flex flex-col gap-4 px-6 py-6">
+            <Link
+              href="/"
+              onClick={() => setShowMobileMenu(false)}
+              className="hover:text-amber-400"
+            >
+              {Text.navbar.home[lang]}
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => setShowMobileMenu(false)}
+              className="hover:text-amber-400"
+            >
+              {Text.navbar.about[lang]}
+            </Link>
+            <Link
+              href="/product"
+              onClick={() => setShowMobileMenu(false)}
+              className="hover:text-amber-400"
+            >
+              {Text.navbar.product[lang]}
+            </Link>
+            <Link
+              href="/gallery"
+              onClick={() => setShowMobileMenu(false)}
+              className="hover:text-amber-400"
+            >
+              {Text.navbar.gallery[lang]}
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setShowMobileMenu(false)}
+              className="hover:text-amber-400"
+            >
+              {Text.navbar.contact[lang]}
+            </Link>
 
-        {/* Link Navigasi */}
-        <div className="flex flex-col gap-4 px-6 mt-4">
-          <Link
-            href="/"
-            onClick={() => setShowMobileMenu(false)}
-            className="hover:text-amber-400"
-          >
-            {Text.navbar.home[lang]}
-          </Link>
-          <Link
-            href="/about"
-            onClick={() => setShowMobileMenu(false)}
-            className="hover:text-amber-400"
-          >
-            {Text.navbar.about[lang]}
-          </Link>
-          <Link
-            href="/product"
-            onClick={() => setShowMobileMenu(false)}
-            className="hover:text-amber-400"
-          >
-            {Text.navbar.product[lang]}
-          </Link>
-          <Link
-            href="/gallery"
-            onClick={() => setShowMobileMenu(false)}
-            className="hover:text-amber-400"
-          >
-            {Text.navbar.gallery[lang]}
-          </Link>
-          <Link
-            href="/contact"
-            onClick={() => setShowMobileMenu(false)}
-            className="hover:text-amber-400"
-          >
-            {Text.navbar.contact[lang]}
-          </Link>
-
-          {/* Language Dropdown */}
+            {/* Language Dropdown */}
+          </div>
           <div className="relative mt-4">
             <button
               onClick={() => setShowDropdown(!showDropdown)}
