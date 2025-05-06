@@ -18,8 +18,8 @@ function Navbar() {
   };
 
   return (
-    <section className="flex justify-between items-center sticky bg-slate-900">
-      <div className="flex justify-between items-center w-full lg:mx-[10vh] bg-slate-900 p-4  top-0 z-70 shadow-md">
+    <section className="flex justify-between items-center w-full sticky bg-slate-900">
+      <div className="flex justify-between items-center w-full lg:mx-[10vh] bg-slate-900 p-4  top-0 shadow-md">
         <div className="flex gap-2 items-center ">
           <Image src={"/logo.webp"} alt="logo" width={50} height={50} />
           <p className=" text-white">NUSANTARA BITES</p>
@@ -85,7 +85,7 @@ function Navbar() {
 
       {/* Hamburger Menu for Mobile */}
       {/* Tombol Hamburger */}
-      <div className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full text-white cursor-pointer">
+      <div className="absolute lg:hidden right-0 mr-[5px] flex items-center justify-center w-10 h-10  text-white cursor-pointer">
         <button
           onClick={() => setShowMobileMenu(!showMobileMenu)}
           className="text-white text-2xl focus:outline-none"
@@ -143,7 +143,7 @@ function Navbar() {
           <div className="relative mt-4">
             <button
               onClick={() => setShowDropdown(!showDropdown)}
-              className="flex items-center gap-2 px-3 py-2 border rounded bg-slate-800 hover:bg-slate-700"
+              className="flex items-center gap-2 px-3 py-2 border rounded bg-slate-800 hover:bg-slate-700 mr-[5px]"
             >
               <Image
                 src={`/assets/${lang}.png`}
@@ -161,7 +161,7 @@ function Navbar() {
             </button>
 
             {showDropdown && (
-              <div className="absolute right-0 mt-2 w-40 bg-white shadow-md border rounded z-10">
+              <div className="absolute right-0 mt-2 w-40 bg-white shadow-md border rounded z-10 mr-[5px]">
                 <button
                   onClick={() => changeLang("id")}
                   className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 w-full text-black"
