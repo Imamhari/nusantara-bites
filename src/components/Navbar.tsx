@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Text, Lang } from "@/utils/Text";
+import { Text, Lang } from "@/utils/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import { SlArrowDown } from "react-icons/sl";
