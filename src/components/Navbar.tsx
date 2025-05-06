@@ -6,7 +6,16 @@ import Link from "next/link";
 import { SlArrowDown } from "react-icons/sl";
 import { CgMenuRight } from "react-icons/cg";
 import { FaWindowClose } from "react-icons/fa";
+import { Caveat, Poppins } from "next/font/google";
 
+const caveat = Caveat({
+    weight: ['400', '700'],
+    subsets: ["latin"],
+})
+const poppins = Poppins({
+    weight: ['400', '700'],
+    subsets: ["latin"],
+})
 function Navbar() {
   const [lang, setLang] = useState<Lang>("id");
   const [showDropdown, setShowDropdown] = useState(false);
@@ -22,9 +31,9 @@ function Navbar() {
       <div className="flex justify-between items-center w-full lg:mx-[10vh] bg-slate-900 p-4  top-0 shadow-md">
         <div className="flex gap-2 items-center ">
           <Image src={"/logo.webp"} alt="logo" width={50} height={50} />
-          <p className=" text-white">MEREK</p>
+          <p className={`${caveat.className} text-white`}>MEREK</p>
         </div>
-        <div className="hidden lg:flex items-center justify-between">
+        <div className={`${poppins.className} hidden lg:flex items-center justify-between`}>
           <div className="flex gap-7 text-md font-semibold text-white items-center">
             <Link href="/" className="hover:text-amber-400">
               <span>{Text.navbar.home[lang]}</span>
@@ -64,17 +73,17 @@ function Navbar() {
         </button>
 
         {showDropdown && (
-          <div className="absolute right-0  mt-12 w-30 bg-white shadow-md border rounded z-10">
+          <div className="absolute right-0  mt-12 w-35 bg-white shadow-md border rounded z-10">
             <button
               onClick={() => changeLang("id")}
-              className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 w-full text-black"
+              className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 w-full hover:rounded text-black"
             >
               <Image src="/assets/id.png" width={20} height={20} alt="ID" />
               Indonesia
             </button>
             <button
               onClick={() => changeLang("en")}
-              className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 w-full text-black"
+              className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 w-full hover:rounded text-black"
             >
               <Image src="/assets/en.png" width={20} height={20} alt="EN" />
               English
