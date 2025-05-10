@@ -27,11 +27,15 @@ function Navbar() {
   };
 
   return (
-    <section className="flex justify-between items-center w-full sticky bg-slate-900">
-      <div className="flex justify-between items-center w-full lg:mx-[10vh] bg-slate-900 p-4  top-0 shadow-md">
-        <div className="flex gap-2 items-center ">
+    <section className="flex justify-between items-center sticky top-0 z-50 ">
+      <div className="flex justify-between items-center w-full p-4 lg:bg-black/10 bg-slate-900 z-50 top-0 shadow-md">
+        <div className="flex justify-between items-center w-full lg:mx-[10vh] ">
+          <div className="flex gap-2 items-center">
           <Image src={"/logo.webp"} alt="logo" width={50} height={50} />
-          <p className={`${caveat.className} text-white`}>MEREK</p>
+          <p className={`${caveat.className} text-white flex flex-col`}>
+            <span>Shaka Agro</span>
+            <span>GLOBAL</span>
+          </p>
         </div>
         <div className={`${poppins.className} hidden lg:flex items-center justify-between`}>
           <div className="flex gap-7 text-md font-semibold text-white items-center">
@@ -52,11 +56,11 @@ function Navbar() {
             </Link>
           </div>
         </div>
-      </div>
+        </div>
       <div className="hidden lg:flex relative mr-4">
         <button
           onClick={() => setShowDropdown(!showDropdown)}
-          className="flex items-center gap-2 px-3 py-2 border rounded bg-slate-900 text-white hover:bg-slate-800 cursor-pointer"
+          className="flex items-center gap-2 px-3 py-2 border rounded bg-slate-900/50 text-white hover:bg-slate-800 cursor-pointer"
         >
           <Image
             src={`/assets/${lang}.png`}
@@ -91,10 +95,11 @@ function Navbar() {
           </div>
         )}
       </div>
+      </div>
 
       {/* Hamburger Menu for Mobile */}
       {/* Tombol Hamburger */}
-      <div className="absolute lg:hidden right-0 mr-[5px] flex items-center justify-center w-10 h-10  text-white cursor-pointer">
+      <div className="absolute lg:hidden right-0 mr-[5px] flex items-center justify-center w-10 h-10  text-white cursor-pointer z-50">
         <button
           onClick={() => setShowMobileMenu(!showMobileMenu)}
           className="text-white text-2xl focus:outline-none transition-transform duration-300 ease-in-out" 
@@ -105,11 +110,11 @@ function Navbar() {
 
       {/* Menu Mobile Drop-down dari atas */}
       <div
-        className={`fixed lg:hidden top-[70px] left-0 w-full bg-slate-900 -z-40 text-white transform transition-transform duration-300 ease-in-out rounded-b-2xl shadow-2xl ${
+        className={`fixed lg:hidden top-[70px] left-0 w-full bg-slate-900  text-white transform transition-transform duration-300 ease-in-out rounded-b-2xl shadow-2xl ${
           showMobileMenu ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="flex justify-between">
+        <div className="flex justify-between -z-50">
           <div className="flex flex-col gap-4 px-6 py-6">
             <Link
               href="/"

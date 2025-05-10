@@ -1,10 +1,11 @@
+import Home from "./home/page";
 
 
-export default function Home() {
+export default function Page() {
   return (
-    <section>
-      <h1 className="text-red-600  text-3xl font-bold">ini home</h1>
+    <main>
+      <Home/>
       
-    </section>
+    </main>
   );
 }
