@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SlArrowDown } from "react-icons/sl";
 import { CgMenuRight } from "react-icons/cg";
-import { FaWindowClose } from "react-icons/fa";
+import { IoCloseSharp } from "react-icons/io5";
 import { Caveat, Poppins } from "next/font/google";
 
 const caveat = Caveat({
@@ -97,15 +97,15 @@ function Navbar() {
       <div className="absolute lg:hidden right-0 mr-[5px] flex items-center justify-center w-10 h-10  text-white cursor-pointer">
         <button
           onClick={() => setShowMobileMenu(!showMobileMenu)}
-          className="text-white text-2xl focus:outline-none"
+          className="text-white text-2xl focus:outline-none transition-transform duration-300 ease-in-out" 
         >
-          {showMobileMenu ? <FaWindowClose /> : <CgMenuRight />}
+          {showMobileMenu ? <IoCloseSharp  /> : <CgMenuRight />}
         </button>
       </div>
 
       {/* Menu Mobile Drop-down dari atas */}
       <div
-        className={`fixed lg:hidden top-[70px] left-0 w-full bg-slate-900 -z-40 text-white transform transition-transform duration-300 ease-in-out ${
+        className={`fixed lg:hidden top-[70px] left-0 w-full bg-slate-900 -z-40 text-white transform transition-transform duration-300 ease-in-out rounded-b-2xl shadow-2xl ${
           showMobileMenu ? "translate-y-0" : "-translate-y-full"
         }`}
       >
