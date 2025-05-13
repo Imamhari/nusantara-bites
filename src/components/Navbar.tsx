@@ -28,10 +28,10 @@ function Navbar() {
 
   return (
     <section className="flex justify-between items-center sticky top-0 z-50 ">
-      <div className="flex justify-between items-center w-full p-4 lg:bg-black/10 bg-slate-900 z-50 top-0 shadow-md">
+      <div className="flex justify-between items-center w-full p-2 bg-black  z-50 top-0 shadow-md">
         <div className="flex justify-between items-center w-full lg:mx-[10vh] ">
           <div className="flex gap-2 items-center">
-          <Image src={"/logo.webp"} alt="logo" width={50} height={50} />
+          <Image src={"/logo.webp"} alt="logo" width={70} height={60} />
           <p className={`${caveat.className} text-white flex flex-col`}>
             <span>Shaka Agro</span>
             <span>GLOBAL</span>
@@ -60,7 +60,7 @@ function Navbar() {
       <div className="hidden lg:flex relative mr-4">
         <button
           onClick={() => setShowDropdown(!showDropdown)}
-          className="flex items-center gap-2 px-3 py-2 border rounded bg-slate-900/50 text-white hover:bg-slate-800 cursor-pointer"
+          className="flex items-center gap-2 px-3 py-2 border rounded bg-black text-white hover:bg-slate-800 cursor-pointer"
         >
           <Image
             src={`/assets/${lang}.png`}
@@ -110,7 +110,7 @@ function Navbar() {
 
       {/* Menu Mobile Drop-down dari atas */}
       <div
-        className={`fixed lg:hidden top-[70px] left-0 w-full bg-slate-900  text-white transform transition-transform duration-300 ease-in-out rounded-b-2xl shadow-2xl ${
+        className={`fixed lg:hidden top-[70px] left-0 w-full bg-black  text-white transform transition-transform duration-300 ease-in-out rounded-b-2xl shadow-2xl ${
           showMobileMenu ? "translate-y-0" : "-translate-y-full"
         }`}
       >
