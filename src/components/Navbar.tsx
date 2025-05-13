@@ -9,7 +9,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { Poppins } from "next/font/google";
 
 
-type NavbarProps = {
+type PageProps = {
   lang: Lang;
   setLang: (lang: Lang) => void;
 };
@@ -21,7 +21,7 @@ const poppins = Poppins({
 })
 
 
-function Navbar({ lang, setLang }: NavbarProps) {
+function Navbar({ lang, setLang }: PageProps) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 

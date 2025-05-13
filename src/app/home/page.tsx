@@ -10,11 +10,11 @@ const images = [
   "/assets/banner/banner-3.webp",
 ];
 
-type BannerProps = {
+type PageProps = {
   lang: Lang;
 };
 
-function Home({ lang }: BannerProps) {
+function Home({ lang }: PageProps) {
   console.log("Language:", lang);
   console.log("Text:", BannerText.hero[lang]);
 
