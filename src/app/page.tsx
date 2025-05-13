@@ -1,18 +1,27 @@
+// app/page.tsx
 "use client";
-import { useState } from "react";
-import type { Lang } from "@/utils/Navbar";
-import Home from "./[lang]/home/page";
+
+import { useLanguage } from "@/context/LanguageContext";
 import Navbar from "@/components/Navbar";
-// import About from "./about/page";
+import Home from "./home/page";
+import { TextSEO } from "@/utils/TextSEO";
+import Head from "next/head";
 
 export default function Page() {
-  const [lang, setLang] = useState<Lang>("id");
-  const params = { lang };
+  const { lang } = useLanguage();
+
   return (
-    <main>
-      <Navbar lang={lang} setLang={setLang} />
-      <Home params={params} />
-      {/* <About lang={lang}/> */}
-    </main>
+    <>
+      <Head>
+        <title>{TextSEO.title[lang]}</title>
+        <meta name="description" content={TextSEO.description[lang]} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+
+      <main>
+        <Navbar />
+        <Home />
+      </main>
+    </>
   );
 }

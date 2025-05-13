@@ -7,12 +7,9 @@ import { SlArrowDown } from "react-icons/sl";
 import { CgMenuRight } from "react-icons/cg";
 import { IoCloseSharp } from "react-icons/io5";
 import { Poppins } from "next/font/google";
+import { useLanguage } from '@/context/LanguageContext';
 
 
-type PageProps = {
-  lang: Lang;
-  setLang: (lang: Lang) => void;
-};
 
 
 const poppins = Poppins({
@@ -21,9 +18,11 @@ const poppins = Poppins({
 })
 
 
-function Navbar({ lang, setLang }: PageProps) {
+function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const { lang, setLang } = useLanguage();
+
 
   const changeLang = (newLang: Lang) => {
     setLang(newLang);

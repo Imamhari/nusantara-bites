@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import '@fontsource/jersey-15'; 
-import '@fontsource-variable/jura';
+import "swiper/css";
+import "swiper/css/autoplay";
+import "@fontsource/jersey-15";
+import "@fontsource-variable/jura";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Shaka Agro Global",
-  icons:"Logo.webp",
+  icons: "Logo.webp",
 };
 
 export default function RootLayout({
@@ -31,9 +32,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        
-        {children}
-        
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

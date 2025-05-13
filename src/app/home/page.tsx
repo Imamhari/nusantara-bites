@@ -2,8 +2,9 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import { BannerText, type Lang } from "@/utils/Home";
+import { BannerText } from "@/utils/Home";
 import { LuSquareArrowOutUpRight } from "react-icons/lu";
+import { useLanguage } from '@/context/LanguageContext';
 
 const images = [
   "/assets/banner/banner-1.webp",
@@ -11,14 +12,8 @@ const images = [
   "/assets/banner/banner-3.webp",
 ];
 
-type PageProps = {
-  params: {
-    lang: Lang;
-  };
-};
-
-function Home({ params }: PageProps) {
-  const { lang } = params;
+function Home() {
+  const { lang } = useLanguage()
 
   return (
     <section className="bg-black/50 items-center justify-center">

@@ -1,4 +1,4 @@
-export type Lang = "en" | "id";
+
 
 export const BannerText = {
     hero: {
