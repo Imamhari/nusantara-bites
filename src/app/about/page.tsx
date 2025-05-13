@@ -4,7 +4,9 @@ function About() {
   return (
     
       
-      <section>aboutpage</section>
+      <section id="about" className="items-center justify-center">
+        
+      </section>
     
   )
 }

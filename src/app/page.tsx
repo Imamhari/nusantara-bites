@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Home from "./home/page";
 import { TextSEO } from "@/utils/TextSEO";
 import Head from "next/head";
+import About from "./about/page";
 
 export default function Page() {
   const { lang } = useLanguage();
@@ -21,6 +22,7 @@ export default function Page() {
       <main>
         <Navbar />
         <Home />
+        <About/>
       </main>
     </>
   );

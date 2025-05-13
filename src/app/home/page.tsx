@@ -16,7 +16,7 @@ function Home() {
   const { lang } = useLanguage()
 
   return (
-    <section className="bg-black/50 items-center justify-center">
+    <section id="home" className="bg-black/50 items-center justify-center">
       <div className="absolute w-full -z-10 h-screen bg-cover bg-center">
         <Swiper
           modules={[Autoplay]}
