@@ -1,4 +1,5 @@
 "use client";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { BannerText, type Lang } from "@/utils/Home";
@@ -11,16 +12,17 @@ const images = [
 ];
 
 type PageProps = {
-  lang: Lang;
+  params: {
+    lang: Lang;
+  };
 };
 
-function Home({ lang }: PageProps) {
-  console.log("Language:", lang);
-  console.log("Text:", BannerText.hero[lang]);
+function Home({ params }: PageProps) {
+  const lang = params.lang;
 
   return (
     <section className="bg-black/50 items-center justify-center">
-      <div className="absolute w-full -z-10 h-screen bg-cover bg-center  ">
+      <div className="absolute w-full -z-10 h-screen bg-cover bg-center">
         <Swiper
           modules={[Autoplay]}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
@@ -32,7 +34,7 @@ function Home({ lang }: PageProps) {
           {images.map((src, i) => (
             <SwiperSlide key={i}>
               <div
-                className="w-full h-screen bg-cover bg-center "
+                className="w-full h-screen bg-cover bg-center"
                 style={{ backgroundImage: `url(${src})` }}
               />
             </SwiperSlide>
@@ -42,7 +44,7 @@ function Home({ lang }: PageProps) {
       <div className="flex flex-col h-[50vh] lg:h-[70vh] items-center justify-center text-white gap-10">
         <div className="flex flex-col items-center justify-center text-center gap-10">
           <h1 className="text-5xl font-bold">SHAKA AGRO GLOBAL</h1>
-          <p className="text-white text-xl text-bold mt-4 text-center  px-4">
+          <p className="text-white text-xl font-bold mt-4 text-center px-4">
             {BannerText.hero[lang]}
           </p>
         </div>
