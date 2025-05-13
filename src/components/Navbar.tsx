@@ -38,7 +38,7 @@ function Navbar({ lang, setLang }: NavbarProps) {
           <Image src={"/logo.webp"} alt="logo" width={70} height={60} />
           <p className=" text-white flex flex-col font-jersey">
             <span style={{ fontFamily: '"Jersey 15", sans-serif', fontSize:"24px" }}>Shaka Agro</span>
-            <span style={{ fontFamily: '"Jura Variable", sans-serif', fontSize:"18px"}} className="font-extrabold">G L O B A L</span>
+            <span style={{ fontFamily: '"Jura Variable", sans-serif', fontSize:"18px"}} className="font-extrabold -mt-1">G L O B A L</span>
           </p>
         </div>
         <div className={`${poppins.className} hidden lg:flex items-center justify-between`}>
