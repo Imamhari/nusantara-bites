@@ -6,17 +6,15 @@ import Link from "next/link";
 import { SlArrowDown } from "react-icons/sl";
 import { CgMenuRight } from "react-icons/cg";
 import { IoCloseSharp } from "react-icons/io5";
-import { Caveat, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
+
 
 type NavbarProps = {
   lang: Lang;
   setLang: (lang: Lang) => void;
 };
 
-const caveat = Caveat({
-    weight: ['400', '700'],
-    subsets: ["latin"],
-})
+
 const poppins = Poppins({
     weight: ['400', '700'],
     subsets: ["latin"],
@@ -36,11 +34,11 @@ function Navbar({ lang, setLang }: NavbarProps) {
     <section className="flex justify-between items-center sticky top-0 z-50 ">
       <div className="flex justify-between items-center w-full p-2 bg-black  z-50 top-0 shadow-md">
         <div className="flex justify-between items-center w-full lg:mx-[10vh] ">
-          <div className="flex gap-2 items-center">
+          <div className="flex items-center">
           <Image src={"/logo.webp"} alt="logo" width={70} height={60} />
-          <p className={`${caveat.className} text-white flex flex-col`}>
-            <span>Shaka Agro</span>
-            <span>GLOBAL</span>
+          <p className=" text-white flex flex-col font-jersey">
+            <span style={{ fontFamily: '"Jersey 15", sans-serif', fontSize:"24px" }}>Shaka Agro</span>
+            <span style={{ fontFamily: '"Jura Variable", sans-serif', fontSize:"18px"}} className="font-extrabold">G L O B A L</span>
           </p>
         </div>
         <div className={`${poppins.className} hidden lg:flex items-center justify-between`}>

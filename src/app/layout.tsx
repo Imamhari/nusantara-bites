@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import '@fontsource/jersey-15'; 
+import '@fontsource-variable/jura';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -50,7 +50,7 @@ function Home({ lang }: BannerProps) {
         <button>
           <a
             href="#product"
-            className="bg-amber-400 hover:bg-amber-500 text-white font-bold py-4 px-4 rounded mt-10"
+            className="bg-amber-400 hover:bg-amber-500 text-white font-bold py-4 px-4 rounded-lg mt-10"
           >
             {BannerText.button[lang]}
             <LuSquareArrowOutUpRight className="inline-block ml-2" size={20} />
