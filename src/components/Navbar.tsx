@@ -8,6 +8,11 @@ import { CgMenuRight } from "react-icons/cg";
 import { IoCloseSharp } from "react-icons/io5";
 import { Caveat, Poppins } from "next/font/google";
 
+type NavbarProps = {
+  lang: Lang;
+  setLang: (lang: Lang) => void;
+};
+
 const caveat = Caveat({
     weight: ['400', '700'],
     subsets: ["latin"],
@@ -16,8 +21,9 @@ const poppins = Poppins({
     weight: ['400', '700'],
     subsets: ["latin"],
 })
-function Navbar() {
-  const [lang, setLang] = useState<Lang>("id");
+
+
+function Navbar({ lang, setLang }: NavbarProps) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
