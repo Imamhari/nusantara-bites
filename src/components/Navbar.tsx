@@ -58,19 +58,19 @@ function Navbar() {
           </div>
           <div className={`${poppins.className} hidden lg:flex items-center justify-between`}>
             <div className="flex gap-7 text-md font-semibold text-white items-center">
-              <a href="#" className={`hover:text-amber-400 ${activeSection === "home" ? "text-amber-400 border-b-3 border-white" : "text-white"}`}>
+              <a href="#" className={`hover:text-amber-400 ${activeSection === "home" ? "text-amber-400 border-b-3 border-white rounded-b-md " : "text-white"}`}>
                 <span>{Text.navbar.home[lang]}</span>
               </a>
-              <a href="#about" className={`hover:text-amber-400 ${activeSection === "about" ? "text-amber-400 border-b-3 border-white" : "text-white"}`}>
+              <a href="#about" className={`hover:text-amber-400 ${activeSection === "about" ? "text-amber-400 border-b-3 border-white rounded-b-md" : "text-white"}`}>
                 <span>{Text.navbar.about[lang]}</span>
               </a>
-              <a href="#product" className={`hover:text-amber-400 ${activeSection === "product" ? "text-amber-400 border-b-3 border-white" : "text-white"}`}>
+              <a href="#product" className={`hover:text-amber-400 ${activeSection === "product" ? "text-amber-400 border-b-3 border-white rounded-b-md" : "text-white"}`}>
                 <span>{Text.navbar.product[lang]}</span>
               </a>
-              <a href="#gallery" className={`hover:text-amber-400 ${activeSection === "gallery" ? "text-amber-400 border-b-3 border-white" : "text-white"}`}>
+              <a href="#gallery" className={`hover:text-amber-400 ${activeSection === "gallery" ? "text-amber-400 border-b-3 border-white rounded-b-md" : "text-white"}`}>
                 <span>{Text.navbar.gallery[lang]}</span>
               </a>
-              <a href="#contact" className={`hover:text-amber-400 ${activeSection === "contact" ? "text-amber-400 border-b-3 border-white" : "text-white"}`}>
+              <a href="#contact" className={`hover:text-amber-400 ${activeSection === "contact" ? "text-amber-400 border-b-3 border-white rounded-b-md" : "text-white"}`}>
                 <span>{Text.navbar.contact[lang]}</span>
               </a>
             </div>
