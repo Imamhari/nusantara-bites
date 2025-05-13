@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MEREK",
-  icons:"logo.webp"
+  title: "Shaka Agro Global",
+  icons:"Logo.webp",
 };
 
 export default function RootLayout({

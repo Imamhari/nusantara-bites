@@ -11,14 +11,14 @@ const images = [
 function Home() {
   return (
     <section className="bg-black/50 items-center justify-center">
-      <div className="absolute w-full -z-10 h-screen bg-cover bg-center ">
+      <div className="absolute w-full -z-10 h-screen bg-cover bg-center  ">
         <Swiper
           modules={[Autoplay]}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           loop={true}
           speed={1000}
           slidesPerView={1}
-          className="w-full h-[50vh] lg:h-[70vh] "
+          className="w-full h-[50vh] lg:h-[70vh] shadow-2xl"
         >
           {images.map((src, i) => (
             <SwiperSlide key={i}>
