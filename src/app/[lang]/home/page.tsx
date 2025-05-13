@@ -18,7 +18,7 @@ type PageProps = {
 };
 
 function Home({ params }: PageProps) {
-  const lang = params.lang;
+  const { lang } = params;
 
   return (
     <section className="bg-black/50 items-center justify-center">
