@@ -8,6 +8,20 @@ export const BannerText = {
     button: {
         id:"Jelajahi",
         en:"Explore More"
+    },
+    data:{
+        partnersCount:{
+            id:"Mitra Luar Negeri",
+            en:"Overseas Partners"
+        },
+        countries:{
+            id:"Negara Tujuan Ekspor",
+            en:"Export Destination Countries"
+        },
+        product:{
+            id:"Produk Tersedia",
+            en:"Avaliable Product"
+        },
     }
 
 }
