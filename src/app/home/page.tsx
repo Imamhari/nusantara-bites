@@ -6,6 +6,7 @@ import { BannerText } from "@/utils/Home";
 import { LuSquareArrowOutUpRight } from "react-icons/lu";
 import { useLanguage } from "@/context/LanguageContext";
 import { FaHandshake, FaGlobe, FaBox  } from "react-icons/fa";
+import Freight from "@/components/Freight";
 
 const images = [
   "/assets/banner/banner-1.webp",
@@ -82,6 +83,9 @@ function Home() {
           </div>
           <span>{BannerText.data.product[lang]}</span>
         </div>
+      </div>
+      <div className="mt-20 flex justify-center">
+        <Freight/>
       </div>
     </section>
   );
