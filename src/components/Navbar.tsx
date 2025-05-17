@@ -81,7 +81,7 @@ function Navbar() {
             onClick={() => setShowDropdown(!showDropdown)}
             className="flex items-center gap-2 px-3 py-2 border rounded bg-black text-white hover:bg-slate-800 cursor-pointer"
           >
-            <Image src={`/assets/${lang}.png`} width={20} height={20} alt="flag" />
+            <Image src={`/assets/lang/${lang}.png`} width={20} height={20} alt="flag" />
             <span>{lang.toUpperCase()}</span>
             <SlArrowDown size={30} color="white" className={`text-white  ${showDropdown ? "rotate-180" : ""}`} />
           </button>
@@ -138,7 +138,7 @@ function Navbar() {
               onClick={() => setShowDropdown(!showDropdown)}
               className="flex items-center gap-2 px-3 py-2 border rounded bg-slate-800 hover:bg-slate-700 mr-[5px]"
             >
-              <Image src={`/assets/${lang}.png`} width={20} height={20} alt="flag" />
+              <Image src={`/assets/lang/${lang}.png`} width={20} height={20} alt="flag" />
               <span>{lang.toUpperCase()}</span>
               <SlArrowDown size={15} className={`transition-transform ${showDropdown ? "rotate-180" : ""}`} />
             </button>

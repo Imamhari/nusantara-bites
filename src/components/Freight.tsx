@@ -12,7 +12,13 @@ import "swiper/css/pagination";
 function Freight() {
   const { lang } = useLanguage();
 
-  const renderCard = (image: string, icon: string, title: string, desc: string, alt: string) => (
+  const renderCard = (
+    image: string,
+    icon: string,
+    title: string,
+    desc: string,
+    alt: string
+  ) => (
     <div className="bg-white rounded-lg border pb-5 w-full max-w-[300px] mx-auto">
       <Image
         src={image}
@@ -21,13 +27,13 @@ function Freight() {
         height={200}
         className="rounded-t-lg shadow-xl h-[200px] w-full object-cover"
       />
-      <div className="p-2 relative -mt-10 ml-4 w-fit">
+      <div className="relative -mt-10 ml-4 w-[70px] h-[70px] bg-white rounded-full shadow-xl flex items-center justify-center p-2">
         <Image
           src={icon}
           alt={`${alt}-icon`}
-          width={70}
-          height={70}
-          className="bg-white rounded-full p-2 shadow-xl"
+          width={40}
+          height={40}
+          className="object-contain"
         />
       </div>
       <p className="mx-5 mt-5">
@@ -40,8 +46,8 @@ function Freight() {
 
   return (
     <div className="w-full">
-      {/* Desktop view */}
-      <div className="hidden lg:flex justify-center xl:mx-[10vw]">
+      {/* Desktop View */}
+      <div className="hidden lg:flex justify-center gap-6 xl:mx-[15vw]">
         {renderCard(
           "/assets/freight/truck-freight.webp",
           "/assets/freight/delivery-truck.svg",
@@ -74,17 +80,9 @@ function Freight() {
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop={true}
           breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
+            0: { slidesPerView: 1, spaceBetween: 10 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
           }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
           className="w-full"
         >
           <SwiperSlide>
