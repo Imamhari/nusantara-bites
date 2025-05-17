@@ -21,8 +21,14 @@ export default function Page() {
 
       <main>
         <Navbar />
-        <Home />
-        <About/>
+        <div className="scroll-smooth">
+          <div id="home" className="md:scroll-mt-24">
+            <Home />
+          </div>
+        <div id="about" className="md:scroll-mt-24">
+            <About />
+          </div>
+        </div>
       </main>
     </>
   );
