@@ -1,84 +1,120 @@
+"use client";
+
 import { BannerText } from "@/utils/Home";
 import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function Freight() {
-    const { lang } = useLanguage();
+  const { lang } = useLanguage();
+
+  const renderCard = (image: string, icon: string, title: string, desc: string, alt: string) => (
+    <div className="bg-white rounded-lg border pb-5 w-full max-w-[300px] mx-auto">
+      <Image
+        src={image}
+        alt={alt}
+        width={300}
+        height={200}
+        className="rounded-t-lg shadow-xl h-[200px] w-full object-cover"
+      />
+      <div className="p-2 relative -mt-10 ml-4 w-fit">
+        <Image
+          src={icon}
+          alt={`${alt}-icon`}
+          width={70}
+          height={70}
+          className="bg-white rounded-full p-2 shadow-xl"
+        />
+      </div>
+      <p className="mx-5 mt-5">
+        {title}
+        <br />
+        <span className="text-sm text-gray-500 text-justify">{desc}</span>
+      </p>
+    </div>
+  );
+
   return (
-    <div className="flex justify-evenly w-screen mx-20 ">
-      <div className="bg-white rounded-lg border w-[300px] pb-5">
-        <Image
-          src="/assets/freight/truck-freight.webp"
-          alt="truck-freight"
-          width={300}
-          height={30}
-          className="rounded-t-lg shadow-xl h-[200px]"
-        />
-        <div className="p-2 relative -mt-10 ml-4">
-          <Image
-            src="/assets/freight/delivery-truck.svg"
-            alt="delivery-truck"
-            width={70}
-            height={30}
-            className="bg-white rounded-full p-2 shadow-xl"
-          />
-        </div>
-        <p className="mx-5 mt-5 ">
-          {BannerText.truckFreight.title[lang]}
-          <br />
-          <span className="text-sm text-gray-500 text-justify ">
-            {BannerText.truckFreight.description[lang]}
-          </span>
-        </p>
+    <div className="w-full">
+      {/* Desktop view */}
+      <div className="hidden lg:flex justify-center xl:mx-[10vw]">
+        {renderCard(
+          "/assets/freight/truck-freight.webp",
+          "/assets/freight/delivery-truck.svg",
+          BannerText.truckFreight.title[lang],
+          BannerText.truckFreight.description[lang],
+          "truck-freight"
+        )}
+        {renderCard(
+          "/assets/freight/air-freight.webp",
+          "/assets/freight/airplane.svg",
+          BannerText.airFreight.title[lang],
+          BannerText.airFreight.description[lang],
+          "air-freight"
+        )}
+        {renderCard(
+          "/assets/freight/ship-freight.webp",
+          "/assets/freight/ship.svg",
+          BannerText.shipFreight.title[lang],
+          BannerText.shipFreight.description[lang],
+          "ship-freight"
+        )}
       </div>
-      <div className="bg-white rounded-lg border w-[300px] pb-5">
-        <Image
-          src="/assets/freight/air-freight.webp"
-          alt="truck-freight"
-          width={300}
-          height={30}
-          className="rounded-t-lg shadow-xl h-[200px]"
-        />
-        <div className="relative bg-white p-4 rounded-full shadow-xl flex items-center w-[70px] h-[70px] -mt-9 ml-6">
-          <Image
-            src="/assets/freight/airplane.svg"
-            alt="airplane"
-            width={40}
-            height={40}
-          />
-        </div>
-        <p className="mx-5 mt-5">
-          {BannerText.airFreight.title[lang]}
-          <br />
-          <span className="text-sm text-gray-500 text-justify">
-            {BannerText.airFreight.description[lang]}
-          </span>
-        </p>
-      </div>
-      <div className="bg-white rounded-lg border w-[300px] pb-5">
-        <Image
-          src="/assets/freight/ship-freight.webp"
-          alt="ship-freight"
-          width={300}
-          height={29}
-          className="rounded-t-lg shadow-xl h-[200px]"
-        />
-        <div className="p-2 relative -mt-10 ml-4">
-          <Image
-            src="/assets/freight/ship.svg"
-            alt="delivery-truck"
-            width={70}
-            height={30}
-            className="bg-white rounded-full p-2 shadow-xl"
-          />
-        </div>
-        <p className="mx-5 mt-5">
-          {BannerText.shipFreight.title[lang]}
-          <br />
-          <span className="text-sm text-gray-500 text-justify">
-            {BannerText.shipFreight.description[lang]}
-          </span>
-        </p>
+
+      {/* Mobile & Tablet View */}
+      <div className="lg:hidden px-4">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop={true}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+          }}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+          className="w-full"
+        >
+          <SwiperSlide>
+            {renderCard(
+              "/assets/freight/truck-freight.webp",
+              "/assets/freight/delivery-truck.svg",
+              BannerText.truckFreight.title[lang],
+              BannerText.truckFreight.description[lang],
+              "truck-freight"
+            )}
+          </SwiperSlide>
+          <SwiperSlide>
+            {renderCard(
+              "/assets/freight/air-freight.webp",
+              "/assets/freight/airplane.svg",
+              BannerText.airFreight.title[lang],
+              BannerText.airFreight.description[lang],
+              "air-freight"
+            )}
+          </SwiperSlide>
+          <SwiperSlide>
+            {renderCard(
+              "/assets/freight/ship-freight.webp",
+              "/assets/freight/ship.svg",
+              BannerText.shipFreight.title[lang],
+              BannerText.shipFreight.description[lang],
+              "ship-freight"
+            )}
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
