@@ -1,6 +1,6 @@
 "use client";
 
-import { BannerText } from "@/utils/Home";
+import { HomeText } from "@/utils/Home";
 import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -51,22 +51,22 @@ function Freight() {
         {renderCard(
           "/assets/freight/truck-freight.webp",
           "/assets/freight/delivery-truck.svg",
-          BannerText.truckFreight.title[lang],
-          BannerText.truckFreight.description[lang],
+          HomeText.truckFreight.title[lang],
+          HomeText.truckFreight.description[lang],
           "truck-freight"
         )}
         {renderCard(
           "/assets/freight/air-freight.webp",
           "/assets/freight/airplane.svg",
-          BannerText.airFreight.title[lang],
-          BannerText.airFreight.description[lang],
+          HomeText.airFreight.title[lang],
+          HomeText.airFreight.description[lang],
           "air-freight"
         )}
         {renderCard(
           "/assets/freight/ship-freight.webp",
           "/assets/freight/ship.svg",
-          BannerText.shipFreight.title[lang],
-          BannerText.shipFreight.description[lang],
+          HomeText.shipFreight.title[lang],
+          HomeText.shipFreight.description[lang],
           "ship-freight"
         )}
       </div>
@@ -89,8 +89,8 @@ function Freight() {
             {renderCard(
               "/assets/freight/truck-freight.webp",
               "/assets/freight/delivery-truck.svg",
-              BannerText.truckFreight.title[lang],
-              BannerText.truckFreight.description[lang],
+              HomeText.truckFreight.title[lang],
+              HomeText.truckFreight.description[lang],
               "truck-freight"
             )}
           </SwiperSlide>
@@ -98,8 +98,8 @@ function Freight() {
             {renderCard(
               "/assets/freight/air-freight.webp",
               "/assets/freight/airplane.svg",
-              BannerText.airFreight.title[lang],
-              BannerText.airFreight.description[lang],
+              HomeText.airFreight.title[lang],
+              HomeText.airFreight.description[lang],
               "air-freight"
             )}
           </SwiperSlide>
@@ -107,8 +107,8 @@ function Freight() {
             {renderCard(
               "/assets/freight/ship-freight.webp",
               "/assets/freight/ship.svg",
-              BannerText.shipFreight.title[lang],
-              BannerText.shipFreight.description[lang],
+              HomeText.shipFreight.title[lang],
+              HomeText.shipFreight.description[lang],
               "ship-freight"
             )}
           </SwiperSlide>

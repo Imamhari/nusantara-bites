@@ -1,5 +1,3 @@
-export type Lang = "en" | "id";
-
 export const TextSEO = {
   title: {
     id: "Selamat Datang di Perusahaan Ekspor",

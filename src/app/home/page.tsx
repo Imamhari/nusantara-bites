@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import { BannerText } from "@/utils/Home";
+import { HomeText } from "@/utils/Home";
 import { LuSquareArrowOutUpRight } from "react-icons/lu";
 import { useLanguage } from "@/context/LanguageContext";
 import { FaHandshake, FaGlobe, FaBox  } from "react-icons/fa";
@@ -43,7 +43,7 @@ function Home() {
           <div className="flex flex-col items-center justify-center text-center gap-10">
             <h1 className="text-5xl font-bold">SHAKA AGRO GLOBAL</h1>
             <p className="text-white text-xl font-bold mt-4 text-center px-4">
-              {BannerText.hero[lang]}
+              {HomeText.hero[lang]}
             </p>
           </div>
 
@@ -52,7 +52,7 @@ function Home() {
               href="#product"
               className="bg-amber-400 hover:bg-amber-500 text-white font-bold py-4 px-4 rounded-lg mt-10"
             >
-              {BannerText.button[lang]}
+              {HomeText.button[lang]}
               <LuSquareArrowOutUpRight
                 className="inline-block ml-2"
                 size={20}
@@ -67,21 +67,21 @@ function Home() {
             <FaHandshake className="text-amber-400" size={40} />
           <p className="text-3xl text-red-400">5+</p>
           </div>
-          <span>{BannerText.data.partnersCount[lang]}</span>
+          <span>{HomeText.data.partnersCount[lang]}</span>
         </div>
         <div className="space-y-2">
           <div className="flex gap-5 items-center justify-center">
             <FaGlobe className="text-amber-400" size={40} />
           <p className="text-3xl text-red-400">5+</p>
           </div>
-          <span>{BannerText.data.countries[lang]}</span>
+          <span>{HomeText.data.countries[lang]}</span>
         </div>
         <div className="space-y-2">
           <div className="flex gap-5 items-center justify-center">
             <FaBox className="text-amber-400" size={40} />
           <p className="text-3xl text-red-400">5+</p>
           </div>
-          <span>{BannerText.data.product[lang]}</span>
+          <span>{HomeText.data.product[lang]}</span>
         </div>
       </div>
       <div className="mt-20 flex justify-center">
